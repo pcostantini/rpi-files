@@ -10,23 +10,23 @@ max_uploads = 5
 max_downloads_global = 30
 
 # Global upload and download rate in KiB. "0" for unlimited.
-download_rate = 0
+download_rate = 820
 upload_rate = 32
 
 # Default directory to save the downloaded torrents.
-directory = /mnt/maelstrom/.incomming
+directory = /mnt/hell/.incomming
 
 # Default session directory. Make sure you don't run multiple instance
 # of rtorrent using the same session directory. Perhaps using a
 # relative path?
-session = /mnt/maelstrom/.incomming/session
+session = /mnt/hell/.incomming/session
 
 # Watch a directory for new torrents, and stop those that have been
 # deleted.
-schedule = watch_directory,5,5,load_start=/mnt/maelstrom/.queue/*.torrent
+schedule = watch_directory,5,5,load_start=/mnt/hell/.queue/*.torrent
 schedule = untied_directory,5,5,close_untied=
 
-system.method.set_key = event.download.finished,move_complete,"execute=mv,-u,$d.get_base_path=,/mnt/maelstrom/NEW/;d.set_directory=/mnt/maelstrom/NEW/"
+system.method.set_key = event.download.finished,move_complete,"execute=mv,-u,$d.get_base_path=,/mnt/hell/NEW/;d.set_directory=/mnt/hell/NEW/"
 system.method.set_key = event.download.finished,rm_torrent,"execute=rm,$d.get_tied_to_file="
 
 # Close torrents when diskspace is low.
@@ -72,7 +72,7 @@ use_udp_trackers = yes
 # "auto" (start and stop DHT as needed), or "on" (start DHT immediately).
 # The default is "off". For DHT to work, a session directory must be defined.
 #
-dht = off
+dht = auto
 
 # UDP port to use for DHT.
 #
