@@ -14,7 +14,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="svnserve"
 NAME=svnserve
 DAEMON=/usr/bin/$NAME
-DAEMON_ARGS="-d -r /mnt/firestorm/.repos"
+DAEMON_ARGS="-d -r /home/pi/lb.svn"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 
